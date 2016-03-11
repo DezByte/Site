@@ -1,0 +1,721 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "490cd2f44c066eea3b1285c0baf76c9f",
+    "content-hash": "554c1d40dd15d767e817ed770c28ee4e",
+    "packages": [
+        {
+            "name": "dez-php/dez-auth",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-auth.git",
+                "reference": "6cf41941c561204c900927c8661877cafe0042c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-auth/zipball/6cf41941c561204c900927c8661877cafe0042c1",
+                "reference": "6cf41941c561204c900927c8661877cafe0042c1",
+                "shasum": ""
+            },
+            "require": {
+                "dez-php/dez-di": ">=1.0",
+                "dez-php/dez-http": ">=1.0",
+                "dez-php/dez-orm": ">=1.0",
+                "dez-php/dez-session": ">=1.0",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Auth\\": "src/Auth"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "Auth Component",
+            "keywords": [
+                "auth",
+                "dez-php auth",
+                "php auth"
+            ],
+            "time": "2015-10-30 21:51:50"
+        },
+        {
+            "name": "dez-php/dez-collection",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-collection.git",
+                "reference": "7f51534e2135a020563d259513bd4592dbf654e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-collection/zipball/7f51534e2135a020563d259513bd4592dbf654e7",
+                "reference": "7f51534e2135a020563d259513bd4592dbf654e7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko (Dez)",
+                    "email": "vania.gontarenko@gmail.com",
+                    "role": "dev"
+                }
+            ],
+            "description": "Simple PHP Collection Class",
+            "keywords": [
+                "collection",
+                "dez-php collection",
+                "php collection",
+                "simple php collection"
+            ],
+            "time": "2015-09-07 14:33:58"
+        },
+        {
+            "name": "dez-php/dez-configuration",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-configuration.git",
+                "reference": "96151e60b878845e7913f2c32e0329a2ff485235"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-configuration/zipball/96151e60b878845e7913f2c32e0329a2ff485235",
+                "reference": "96151e60b878845e7913f2c32e0329a2ff485235",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Config\\": "src/Config"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "DezPHP - Config",
+            "keywords": [
+                "config",
+                "dez-config",
+                "dez-php config",
+                "php config"
+            ],
+            "time": "2015-11-25 09:22:42"
+        },
+        {
+            "name": "dez-php/dez-data-validation",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-data-validation.git",
+                "reference": "64d4b5b86d563cc596bc8b979b36052762bd97a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-data-validation/zipball/64d4b5b86d563cc596bc8b979b36052762bd97a6",
+                "reference": "64d4b5b86d563cc596bc8b979b36052762bd97a6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Validation\\": "src/Validation"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "Data Validation",
+            "keywords": [
+                "data validation",
+                "dez-validation",
+                "php validation",
+                "validation"
+            ],
+            "time": "2016-02-22 09:46:47"
+        },
+        {
+            "name": "dez-php/dez-db",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-db.git",
+                "reference": "460c176ac6a7fbb7cd6f7e97c6960ac3144bbb98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-db/zipball/460c176ac6a7fbb7cd6f7e97c6960ac3144bbb98",
+                "reference": "460c176ac6a7fbb7cd6f7e97c6960ac3144bbb98",
+                "shasum": ""
+            },
+            "require": {
+                "dez-php/dez-configuration": ">=1.0.0",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Db\\": "src/Db"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "Db Connection Component",
+            "keywords": [
+                "db",
+                "dez-php db",
+                "php db",
+                "php db connection"
+            ],
+            "time": "2015-10-18 09:08:17"
+        },
+        {
+            "name": "dez-php/dez-di",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-di.git",
+                "reference": "631661a66452b9cf04d5f6343dec0e9769c3284f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-di/zipball/631661a66452b9cf04d5f6343dec0e9769c3284f",
+                "reference": "631661a66452b9cf04d5f6343dec0e9769c3284f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\DependencyInjection\\": "src/DependencyInjection"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "DezPHP - Dependency injection",
+            "keywords": [
+                "PHP Dependency Injection",
+                "dependency injection",
+                "dez-di",
+                "dez-php dependency injection",
+                "di"
+            ],
+            "time": "2015-09-21 09:18:02"
+        },
+        {
+            "name": "dez-php/dez-event",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-event.git",
+                "reference": "11c09de910dae0a3472d9726bd49b3304aa85c69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-event/zipball/11c09de910dae0a3472d9726bd49b3304aa85c69",
+                "reference": "11c09de910dae0a3472d9726bd49b3304aa85c69",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\EventDispatcher\\": "src/EventDispatcher"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "EventDispatcher Component",
+            "keywords": [
+                "dez-php",
+                "event",
+                "event dispatcher"
+            ],
+            "time": "2015-09-09 11:26:22"
+        },
+        {
+            "name": "dez-php/dez-flash",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-flash.git",
+                "reference": "b771b311e7eef57ea7657cd72e540fd4756fac79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-flash/zipball/b771b311e7eef57ea7657cd72e540fd4756fac79",
+                "reference": "b771b311e7eef57ea7657cd72e540fd4756fac79",
+                "shasum": ""
+            },
+            "require": {
+                "dez-php/dez-di": ">=1.0.0",
+                "dez-php/dez-session": ">=1.0.0",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Flash\\": "src/Flash"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "Flash Messages Component",
+            "keywords": [
+                "dez-php flash",
+                "flash",
+                "php flash"
+            ],
+            "time": "2015-10-30 20:48:13"
+        },
+        {
+            "name": "dez-php/dez-http",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-http.git",
+                "reference": "e423911edb5702bd0981313fe33cc5226cf134da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-http/zipball/e423911edb5702bd0981313fe33cc5226cf134da",
+                "reference": "e423911edb5702bd0981313fe33cc5226cf134da",
+                "shasum": ""
+            },
+            "require": {
+                "dez-php/dez-di": ">=1.0",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Http\\": "src/Http"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "DezPHP - Http Component",
+            "keywords": [
+                "dez-php http",
+                "http",
+                "php http"
+            ],
+            "time": "2015-10-31 13:07:48"
+        },
+        {
+            "name": "dez-php/dez-loader",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-loader.git",
+                "reference": "45c0fca54356fedc94e07f3abe1656e3b8ba2779"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-loader/zipball/45c0fca54356fedc94e07f3abe1656e3b8ba2779",
+                "reference": "45c0fca54356fedc94e07f3abe1656e3b8ba2779",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Loader\\": "src/Loader"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "Universal Autoloader",
+            "keywords": [
+                "autoloader",
+                "dez-php autoloader",
+                "loader",
+                "php autoloader",
+                "php loader"
+            ],
+            "time": "2015-09-04 12:57:11"
+        },
+        {
+            "name": "dez-php/dez-mvc-app",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-mvc-app.git",
+                "reference": "848162521ae2e680ae3fbcb13ce3ba679b70043c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-mvc-app/zipball/848162521ae2e680ae3fbcb13ce3ba679b70043c",
+                "reference": "848162521ae2e680ae3fbcb13ce3ba679b70043c",
+                "shasum": ""
+            },
+            "require": {
+                "dez-php/dez-auth": ">=1.0",
+                "dez-php/dez-configuration": ">=1.0",
+                "dez-php/dez-di": ">=1.0",
+                "dez-php/dez-event": ">=1.0",
+                "dez-php/dez-flash": ">=1.0",
+                "dez-php/dez-http": ">=1.0",
+                "dez-php/dez-loader": ">=1.0",
+                "dez-php/dez-orm": ">=1.0",
+                "dez-php/dez-router": ">=1.0",
+                "dez-php/dez-session": ">=1.0",
+                "dez-php/dez-url": ">=1.0",
+                "dez-php/dez-view": ">=1.0",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Mvc\\": "src/Mvc"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "MVC Application",
+            "keywords": [
+                "dez-php mvc",
+                "mvc",
+                "mvc app",
+                "php mvc"
+            ],
+            "time": "2016-03-11 20:26:47"
+        },
+        {
+            "name": "dez-php/dez-orm",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-orm.git",
+                "reference": "4e9c254c43836263ca97891cd4ac0f6d6e0f4323"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-orm/zipball/4e9c254c43836263ca97891cd4ac0f6d6e0f4323",
+                "reference": "4e9c254c43836263ca97891cd4ac0f6d6e0f4323",
+                "shasum": ""
+            },
+            "require": {
+                "dez-php/dez-collection": ">=1.0.0",
+                "dez-php/dez-db": ">=1.0.0",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\ORM\\": "src/ORM"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "Simple PHP ORM (DezORM)",
+            "keywords": [
+                "dez-php orm",
+                "orm",
+                "php orm",
+                "simple php orm"
+            ],
+            "time": "2015-10-18 11:00:41"
+        },
+        {
+            "name": "dez-php/dez-router",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-router.git",
+                "reference": "05d94424e56793aad9d234a94d4467e5bc5e930e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-router/zipball/05d94424e56793aad9d234a94d4467e5bc5e930e",
+                "reference": "05d94424e56793aad9d234a94d4467e5bc5e930e",
+                "shasum": ""
+            },
+            "require": {
+                "dez-php/dez-di": ">=1.0",
+                "dez-php/dez-event": ">=1.0",
+                "dez-php/dez-http": ">=1.0",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Router\\": "src/Router"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "Router Component",
+            "keywords": [
+                "dez-php router",
+                "php router",
+                "router"
+            ],
+            "time": "2015-10-30 12:29:58"
+        },
+        {
+            "name": "dez-php/dez-session",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-session.git",
+                "reference": "e61c1f0619e3eb2a80d9d2b6d20d914219055dd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-session/zipball/e61c1f0619e3eb2a80d9d2b6d20d914219055dd6",
+                "reference": "e61c1f0619e3eb2a80d9d2b6d20d914219055dd6",
+                "shasum": ""
+            },
+            "require": {
+                "dez-php/dez-di": ">=1.0",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Session\\": "src/Session"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "Session Component",
+            "keywords": [
+                "dez-php session",
+                "php session",
+                "session"
+            ],
+            "time": "2015-10-30 20:01:14"
+        },
+        {
+            "name": "dez-php/dez-url",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-url.git",
+                "reference": "38bbb4c4d7494429bd744a8c63106e29e3509af9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-url/zipball/38bbb4c4d7494429bd744a8c63106e29e3509af9",
+                "reference": "38bbb4c4d7494429bd744a8c63106e29e3509af9",
+                "shasum": ""
+            },
+            "require": {
+                "dez-php/dez-di": ">=1.0",
+                "dez-php/dez-event": ">=1.0",
+                "dez-php/dez-http": ">=1.0",
+                "dez-php/dez-router": ">=1.0",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\Url\\": "src/Url"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "URL/URI/URLBuilder Component",
+            "keywords": [
+                "dez-php url",
+                "php url",
+                "uri",
+                "url",
+                "url builder"
+            ],
+            "time": "2015-10-14 11:49:18"
+        },
+        {
+            "name": "dez-php/dez-view",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dez-php/dez-view.git",
+                "reference": "9aab478cf3b0b82cea044bd236c7dfcc959f467c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dez-php/dez-view/zipball/9aab478cf3b0b82cea044bd236c7dfcc959f467c",
+                "reference": "9aab478cf3b0b82cea044bd236c7dfcc959f467c",
+                "shasum": ""
+            },
+            "require": {
+                "dez-php/dez-collection": ">=1.0",
+                "dez-php/dez-di": ">=1.0",
+                "dez-php/dez-event": ">=1.0",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dez\\View\\": "src/View"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ivan Gontarenko",
+                    "email": "vania.gontarenko@gmail.com"
+                }
+            ],
+            "description": "View Component",
+            "keywords": [
+                "dez-php view",
+                "php view",
+                "view"
+            ],
+            "time": "2015-12-29 11:04:24"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
