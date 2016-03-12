@@ -351,16 +351,16 @@
         },
         {
             "name": "dez-php/dez-http",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-http.git",
-                "reference": "e423911edb5702bd0981313fe33cc5226cf134da"
+                "reference": "be869f3c546e5581efc251a3ff3abc23870ffe57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-http/zipball/e423911edb5702bd0981313fe33cc5226cf134da",
-                "reference": "e423911edb5702bd0981313fe33cc5226cf134da",
+                "url": "https://api.github.com/repos/dez-php/dez-http/zipball/be869f3c546e5581efc251a3ff3abc23870ffe57",
+                "reference": "be869f3c546e5581efc251a3ff3abc23870ffe57",
                 "shasum": ""
             },
             "require": {
@@ -389,7 +389,7 @@
                 "http",
                 "php http"
             ],
-            "time": "2015-10-31 13:07:48"
+            "time": "2016-03-12 09:50:02"
         },
         {
             "name": "dez-php/dez-loader",
