@@ -139,16 +139,16 @@
         },
         {
             "name": "dez-php/dez-data-validation",
-            "version": "v1.0.5",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-data-validation.git",
-                "reference": "64d4b5b86d563cc596bc8b979b36052762bd97a6"
+                "reference": "be967d52049c345b7b7007c00ed6c5fed8fd928e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-data-validation/zipball/64d4b5b86d563cc596bc8b979b36052762bd97a6",
-                "reference": "64d4b5b86d563cc596bc8b979b36052762bd97a6",
+                "url": "https://api.github.com/repos/dez-php/dez-data-validation/zipball/be967d52049c345b7b7007c00ed6c5fed8fd928e",
+                "reference": "be967d52049c345b7b7007c00ed6c5fed8fd928e",
                 "shasum": ""
             },
             "require": {
@@ -177,7 +177,7 @@
                 "php validation",
                 "validation"
             ],
-            "time": "2016-02-22 09:46:47"
+            "time": "2016-03-12 20:46:09"
         },
         {
             "name": "dez-php/dez-db",
@@ -436,16 +436,16 @@
         },
         {
             "name": "dez-php/dez-mvc-app",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-mvc-app.git",
-                "reference": "848162521ae2e680ae3fbcb13ce3ba679b70043c"
+                "reference": "3216ec2b729817d9b64c11531889955dafcbfda3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-mvc-app/zipball/848162521ae2e680ae3fbcb13ce3ba679b70043c",
-                "reference": "848162521ae2e680ae3fbcb13ce3ba679b70043c",
+                "url": "https://api.github.com/repos/dez-php/dez-mvc-app/zipball/3216ec2b729817d9b64c11531889955dafcbfda3",
+                "reference": "3216ec2b729817d9b64c11531889955dafcbfda3",
                 "shasum": ""
             },
             "require": {
@@ -486,7 +486,7 @@
                 "mvc app",
                 "php mvc"
             ],
-            "time": "2016-03-11 20:26:47"
+            "time": "2016-03-12 19:56:51"
         },
         {
             "name": "dez-php/dez-orm",

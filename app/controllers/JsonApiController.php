@@ -12,28 +12,12 @@ class JsonApiController extends Controller {
         $this->response->setBodyFormat(Response::RESPONSE_API_JSON);
     }
 
-    public function authStatusAction()
+    public function indexAction($controller = 'index', $action = 'index')
     {
-        $this->response->setContent([
-            'is_guest' => $this->auth->isGuest(),
-            'user' => $this->auth->getModel()->toArray()
-        ])->setStatusCode(200);
-    }
-
-    public function signInAction()
-    {
-        $auth = $this->auth->authenticate('stewie.dev@gmail.com', '123qwe');
-
-        $this->response->setContent([
-            'user' => $auth->getModel()->toArray()
-        ])->setStatusCode(200);
-    }
-
-    public function indexAction($forwardController = null, $forwardAction = null)
-    {
-        $this->response->setContent([
-            'c' => $forwardController,
-            'a' => $forwardAction,
+        $this->execute([
+            'namespace' => __NAMESPACE__ . "\\JsonApi\\",
+            'controller' => $controller,
+            'action' => $action,
         ]);
     }
 
