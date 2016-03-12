@@ -29,10 +29,11 @@ class JsonApiController extends Controller {
         ])->setStatusCode(200);
     }
 
-    public function indexAction()
+    public function indexAction($forwardController = null, $forwardAction = null)
     {
         $this->response->setContent([
-            'controller' => $this
+            'c' => $forwardController,
+            'a' => $forwardAction,
         ]);
     }
 

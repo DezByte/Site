@@ -26,8 +26,9 @@ class SiteDezzApplication extends Application
      */
     public function initialize()
     {
-        $this->router->add('/api/:action', [
+        $this->router->add('/api/:forwardController.:forwardAction', [
             'controller' => 'json-api',
+            'action' => 'index',
         ]);
 
         return $this;
