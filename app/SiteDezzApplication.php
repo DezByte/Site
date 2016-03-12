@@ -52,6 +52,22 @@ class SiteDezzApplication extends Application
      */
     public function configure()
     {
+        if ($this->config->has('server')) {
+            $serverConfig = $this->config->get('server');
+
+            if($serverConfig->has('timezone')) {
+                date_default_timezone_set($serverConfig['timezone']);
+            }
+
+            if($serverConfig->has('displayErrors')) {
+                ini_set('display_errors', $serverConfig['displayErrors']);
+            }
+
+            if($serverConfig->has('errorLevel')) {
+                error_reporting($serverConfig['errorLevel']);
+            }
+        }
+
         if ($this->config->has('application')) {
             $applicationConfig = $this->config->get('application');
 
