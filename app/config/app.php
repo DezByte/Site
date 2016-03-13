@@ -1,9 +1,13 @@
 <?php
 
 return [
+    'web' => [
+        'siteName' => 'DezSite',
+        'siteSlogan' => 'о коде и котиках',
+    ],
     'application' => [
 
-        'staticPath' => '/',
+        'staticPath' => '/static/',
         'basePath' => '/',
 
         'autoload' => [

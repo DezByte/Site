@@ -31,6 +31,13 @@ class SiteDezzApplication extends Application
             'action' => 'index',
         ]);
 
+        $this->router->add('/:id-:slug', [
+            'controller' => 'articles',
+            'action' => 'item',
+        ])->regex('id', '\d+')->regex('slug', '\w+');
+
+        $this->session->start();
+
         return $this;
     }
 

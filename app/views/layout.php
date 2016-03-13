@@ -1,100 +1,62 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>3 Column Layout</title>
-    <style type="text/css">
-
-        body {
-            min-width: 630px;
-        }
-
-        * html body {
-            overflow: hidden;
-        }
-
-        * html {
-            float: left;
-            position: relative;
-            width: 100%;
-            padding-bottom: 10010px;
-            margin-bottom: -10000px;
-            background: #fff;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            font-family:Sans-serif;
-            line-height: 1.5em;
-        }
-
-        header {
-            background-color: #3a644b;
-            margin: 0;
-            padding: 15px 10px;
-        }
-
-        nav {
-            margin: 30px;
-            padding: 20px 75px;
-            border: 1px solid #537D71;
-            background-color: #B6DED2;
-        }
-
-        .pull-left {
-            float: left;
-        }
-
-        .clear {
-            clear: both;
-        }
-
-
-    </style>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>DezSite</title>
+    <link rel="stylesheet" href="<?= $url->staticPath('css/styles.css'); ?>" type="text/css"/>
 </head>
-
 <body>
-
-<header>
-    <h1>DezByte</h1>
-</header>
-
 <div id="container">
-
-    <nav class="column pull-left">
-        <h3>Left heading</h3>
+    <div id="header">
+        <h1><a href="/"><?= $config['web']['siteName'] ?></a></h1>
+        <h2><?= $config['web']['siteSlogan'] ?></h2>
+        <div class="clear"></div>
+    </div>
+    <div id="nav">
         <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-            <li><a href="#">Link 5</a></li>
+            <li><a href="<?= $url->path('index') ?>">Главная</a></li>
+            <li><a href="<?= $url->path('articles/index') ?>">Странички</a></li>
+            <li><a href="<?= $url->path('index/bin-shares') ?>">Всякие полезности</a></li>
+            <li><a href="<?= $url->path('index/instagram') ?>">Фоточки</a></li>
+            <li class="end"><a href="<?= $url->path('index/about') ?>">О сайтеце</a></li>
         </ul>
-        <h3>Left heading</h3>
-        <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Link 2</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-            <li><a href="#">Link 5</a></li>
-        </ul>
-    </nav>
+    </div>
+    <div id="body">
 
-    <main class="column pull-left">
-        <article>
+        <div id="content">
 
-            <h1>Heading</h1>
-            <p>
-                <?= $this->section( 'content' ); ?>
-            </p>
+            <?= $this->fetch('partials/messages'); ?>
 
-        </article>
-    </main>
+            <?= $this->section('content'); ?>
 
+        </div>
+
+        <div class="sidebar">
+            <ul>
+
+                <li>
+                    <h3>Странички</h3>
+                    <ul class="blocklist">
+                        <li><a href="<?= $url->path('articles/most-popular') ?>">Популярные</a></li>
+                        <li><a href="<?= $url->path('articles/latest') ?>">Самые новые</a></li>
+                        <li><a href="<?= $url->path('articles/categories') ?>">По категориям</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <?= $this->fetch('partials/mini-auth'); ?>
+                </li>
+
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="footer">
+        <div class="footer-bottom">
+            <p>&copy; <?= $config->get('web')->get('siteName') ?> 2015 - <?= date('Y') ?>. <br> Design by <a
+                    href="http://zypopwebtemplates.com/">Free CSS Templates</a> by ZyPOP</p>
+        </div>
+    </div>
 </div>
-
 </body>
-
 </html>

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "490cd2f44c066eea3b1285c0baf76c9f",
-    "content-hash": "554c1d40dd15d767e817ed770c28ee4e",
+    "hash": "ba253a337437d1eafd747a272bffd13b",
+    "content-hash": "604babe5adbbdd7806f02e23bca98532",
     "packages": [
         {
             "name": "dez-php/dez-auth",
@@ -708,12 +708,68 @@
                 "view"
             ],
             "time": "2015-12-29 11:04:24"
+        },
+        {
+            "name": "jbroadway/urlify",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jbroadway/urlify.git",
+                "reference": "3a89d2ef543405a5826190d234146ac3b2a12611"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jbroadway/urlify/zipball/3a89d2ef543405a5826190d234146ac3b2a12611",
+                "reference": "3a89d2ef543405a5826190d234146ac3b2a12611",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "URLify": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Johnny Broadway",
+                    "email": "johnny@johnnybroadway.com",
+                    "homepage": "http://www.johnnybroadway.com/"
+                }
+            ],
+            "description": "PHP port of URLify.js from the Django project. Transliterates non-ascii characters for use in URLs.",
+            "homepage": "https://github.com/jbroadway/urlify",
+            "keywords": [
+                "encode",
+                "iconv",
+                "link",
+                "slug",
+                "translit",
+                "transliterate",
+                "transliteration",
+                "url",
+                "urlify"
+            ],
+            "time": "2015-12-07 18:29:02"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "jbroadway/urlify": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
