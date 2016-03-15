@@ -2,7 +2,6 @@
 
 namespace SiteDezz\Controller;
 
-use Dez\Auth\AuthException;
 use Dez\Mvc\Controller;
 use Dez\Validation\Validation;
 
