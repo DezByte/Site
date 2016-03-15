@@ -1,9 +1,14 @@
 <?php
-/** @var \SiteDezz\Model\Entity\Articles $article */
+/**
+ * @var \SiteDezz\Model\Entity\Articles $article
+ * @var \SiteDezz\Model\Entity\Articles[] $parentCategories
+ */
 ?>
 <h2><?= $article->getTitle(); ?></h2>
 <h4>
-    <a href="<?= $url->path("articles/category/{$article->category()->id()}/{$article->category()->getSlug()}"); ?>"><?= $article->category()->getTitle(); ?></a>
+    <?php foreach ($parentCategories as $parentCategory): ?>
+        <a href="<?= $url->path("articles/category/{$parentCategory->id()}/{$parentCategory->getSlug()}"); ?>"><?= $parentCategory->getTitle(); ?></a>&nbsp;떇&nbsp;
+    <?php endforeach; ?>
 </h4>
 <div>
     <i><?= $article->getCreatedAt(); ?></i>

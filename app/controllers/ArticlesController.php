@@ -42,6 +42,7 @@ class ArticlesController extends Controller
 
         $article->setViews($article->getViews() + 1)->save();
 
+        $this->view->set('parentCategories', ArticleCategories::parentCategories($article->category()->id(), new ModelCollection()));
         $this->view->set('article', $article);
     }
     

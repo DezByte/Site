@@ -74,7 +74,7 @@
         {
             $category = ArticleCategories::one($id);
 
-            $collection->add($category);
+            $collection->prepend($category);
 
             if($category->getParentId() > 0) {
                 static::parentCategories($category->getParentId(), $collection);
