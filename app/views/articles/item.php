@@ -11,8 +11,8 @@
 <p>
     <?= $article->getContent(); ?>
 </p>
-<?php foreach ($article->tags() as $tag): ?>
-    <a href="<?= $url->path("articles/tag/{$tag->id()}/{$tag->getTag()}"); ?>"><?= $tag->getName(); ?></a>&nbsp;&bull;&nbsp;
+<?php foreach ($article->xrefs() as $xref): ?>
+    <a href="<?= $url->path("articles/tag/{$xref->tag()->id()}/{$xref->tag()->getTag()}"); ?>"><?= $xref->tag()->getName(); ?></a>&nbsp;&bull;&nbsp;
 <?php endforeach; ?>
 <hr>
 <h2>Комментарии</h2>

@@ -20,6 +20,14 @@ class ArticlesController extends Controller
 
     public function indexAction()
     {
+
+        $article = Articles::one(6);
+
+        foreach ($article->xrefs() as $xref) {
+            var_dump($xref->tag()->getName());
+        }
+        die;
+
         Articles::published()->pagination($this->request->getQuery('page', 1), 10)->find();
     }
 

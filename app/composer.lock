@@ -54,16 +54,16 @@
         },
         {
             "name": "dez-php/dez-collection",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-collection.git",
-                "reference": "7f51534e2135a020563d259513bd4592dbf654e7"
+                "reference": "2c2e4c05ff5eb42a0c61fce1b2ff9b381ee397d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-collection/zipball/7f51534e2135a020563d259513bd4592dbf654e7",
-                "reference": "7f51534e2135a020563d259513bd4592dbf654e7",
+                "url": "https://api.github.com/repos/dez-php/dez-collection/zipball/2c2e4c05ff5eb42a0c61fce1b2ff9b381ee397d0",
+                "reference": "2c2e4c05ff5eb42a0c61fce1b2ff9b381ee397d0",
                 "shasum": ""
             },
             "require": {
@@ -72,7 +72,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Dez\\": "src/"
+                    "Dez\\Collection\\": "src/Collection"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -93,7 +93,7 @@
                 "php collection",
                 "simple php collection"
             ],
-            "time": "2015-09-07 14:33:58"
+            "time": "2016-03-15 08:53:32"
         },
         {
             "name": "dez-php/dez-configuration",
@@ -490,16 +490,16 @@
         },
         {
             "name": "dez-php/dez-orm",
-            "version": "v1.0.6",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-orm.git",
-                "reference": "4e9c254c43836263ca97891cd4ac0f6d6e0f4323"
+                "reference": "444d46f967177cda03ed0cc303a25c906a844441"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-orm/zipball/4e9c254c43836263ca97891cd4ac0f6d6e0f4323",
-                "reference": "4e9c254c43836263ca97891cd4ac0f6d6e0f4323",
+                "url": "https://api.github.com/repos/dez-php/dez-orm/zipball/444d46f967177cda03ed0cc303a25c906a844441",
+                "reference": "444d46f967177cda03ed0cc303a25c906a844441",
                 "shasum": ""
             },
             "require": {
@@ -520,17 +520,17 @@
             "authors": [
                 {
                     "name": "Ivan Gontarenko",
-                    "email": "vania.gontarenko@gmail.com"
+                    "email": "stewie.dev@gmail.com"
                 }
             ],
-            "description": "Simple PHP ORM (DezORM)",
+            "description": "Dez ORM",
             "keywords": [
                 "dez-php orm",
                 "orm",
                 "php orm",
                 "simple php orm"
             ],
-            "time": "2015-10-18 11:00:41"
+            "time": "2016-03-15 13:41:14"
         },
         {
             "name": "dez-php/dez-router",

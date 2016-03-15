@@ -20,22 +20,6 @@
         /**
          * @return mixed
          */
-        public function getArticleId() {
-            return $this->get( 'article_id' );
-        }
-
-        /**
-         * @param mixed $article_id
-         * @return $this
-         */
-        public function setArticleId( $article_id ) {
-            $this->set( 'article_id', $article_id );
-            return $this;
-        }
-        
-        /**
-         * @return mixed
-         */
         public function getTag() {
             return $this->get( 'tag' );
         }

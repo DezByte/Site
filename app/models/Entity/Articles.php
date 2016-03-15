@@ -23,12 +23,12 @@
         const STATUS_UNPUBLISHED = 'unpublished';
 
         /**
-         * @return ModelCollection[ArticleTags]
+         * @return ModelCollection
          * @throws \Dez\ORM\Exception
          */
-        public function tags()
+        public function xrefs()
         {
-            return $this->hasMany(ArticleTags::class, 'article_id', 'id');
+            return $this->hasMany(ArticleTagRef::class, 'article_id', 'id');
         }
 
         /**
@@ -46,16 +46,21 @@
          */
         public function createTags($tags)
         {
-            ArticleTags::query()->where('article_id', $this->id())->delete();
+            foreach ($this->xrefs() as $xref) {
+                /** @var ArticleTagRef $xref */
+                $xref->tag()->delete();
+                $xref->delete();
+            }
 
             $tags = array_map(function($tag){
                 return trim($tag);
             }, explode(',', $tags));
 
             foreach ($tags as $tag) {
-                (new ArticleTags())
-                    ->setArticleId($this->id())->setName($tag)->setTag(\URLify::filter($tag))
-                    ->save(true);
+                $tagModel = (new ArticleTags())
+                    ->setName($tag)->setTag(\URLify::filter($tag))
+                ;
+                $tagModel->save(true);
             }
 
             return $this;

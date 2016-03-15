@@ -15,5 +15,23 @@
 
     class ArticleTagRef extends Entity_1e84be86c98ed15b6b4a21fa7f0c4586
     {
-        // write your code here
+
+        /**
+         * @return Articles
+         * @throws \Dez\ORM\Exception
+         */
+        public function articles()
+        {
+            return $this->hasOne(Articles::class, 'id', 'article_id');
+        }
+
+        /**
+         * @return ArticleTags
+         * @throws \Dez\ORM\Exception
+         */
+        public function tag()
+        {
+            return $this->hasOne(ArticleTags::class, 'id', 'tag_id');
+        }
+
     }
