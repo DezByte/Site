@@ -18,13 +18,17 @@
     class Articles extends Entity_dba5d91846ce1a5e63734dfcbcb481cb
     {
 
+        const STATUS_PUBLISHED = 'published';
+
+        const STATUS_UNPUBLISHED = 'unpublished';
+
         /**
          * @return ModelCollection
          * @throws \Dez\ORM\Exception
          */
-        public function tags()
+        public function xrefs()
         {
-            return $this->hasMany(ArticleTags::class, 'id', 'article_id');
+            return $this->hasMany(ArticleTagRef::class, 'article_id', 'id');
         }
 
         /**
@@ -37,6 +41,32 @@
         }
 
         /**
+         * @param string $tags
+         * @return $this
+         */
+        public function createTags($tags)
+        {
+            foreach ($this->xrefs() as $xref) {
+                /** @var ArticleTagRef $xref */
+                $xref->tag()->delete();
+                $xref->delete();
+            }
+
+            $tags = array_map(function($tag){
+                return trim($tag);
+            }, explode(',', $tags));
+
+            foreach ($tags as $tag) {
+                $tagModel = (new ArticleTags())
+                    ->setName($tag)->setTag(\URLify::filter($tag))
+                ;
+                $tagModel->save(true);
+            }
+
+            return $this;
+        }
+
+        /**
          * @return QueryBuilder
          */
         public static function popular()
@@ -44,15 +74,12 @@
             return static::query()->order('views', 'desc');
         }
 
-        public function createTags($tags)
+        /**
+         * @return QueryBuilder
+         */
+        public static function published()
         {
-            ArticleTags::query()->where('article_id', $this->id())->delete();
-
-            $tags = array_map(function($tag){
-                return trim($tag);
-            }, explode(',', $tags));
-
-            die(var_dump($tags));
+            return static::query()->where('status', static::STATUS_PUBLISHED);
         }
 
     }
