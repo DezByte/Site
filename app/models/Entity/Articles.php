@@ -18,13 +18,17 @@
     class Articles extends Entity_dba5d91846ce1a5e63734dfcbcb481cb
     {
 
+        const STATUS_PUBLISHED = 'published';
+
+        const STATUS_UNPUBLISHED = 'unpublished';
+
         /**
-         * @return ModelCollection
+         * @return ModelCollection[ArticleTags]
          * @throws \Dez\ORM\Exception
          */
         public function tags()
         {
-            return $this->hasMany(ArticleTags::class, 'id', 'article_id');
+            return $this->hasMany(ArticleTags::class, 'article_id', 'id');
         }
 
         /**
@@ -37,13 +41,9 @@
         }
 
         /**
-         * @return QueryBuilder
+         * @param string $tags
+         * @return $this
          */
-        public static function popular()
-        {
-            return static::query()->order('views', 'desc');
-        }
-
         public function createTags($tags)
         {
             ArticleTags::query()->where('article_id', $this->id())->delete();
@@ -52,7 +52,29 @@
                 return trim($tag);
             }, explode(',', $tags));
 
-            die(var_dump($tags));
+            foreach ($tags as $tag) {
+                (new ArticleTags())
+                    ->setArticleId($this->id())->setName($tag)->setTag(\URLify::filter($tag))
+                    ->save(true);
+            }
+
+            return $this;
+        }
+
+        /**
+         * @return QueryBuilder
+         */
+        public static function popular()
+        {
+            return static::query()->order('views', 'desc');
+        }
+
+        /**
+         * @return QueryBuilder
+         */
+        public static function published()
+        {
+            return static::query()->where('status', static::STATUS_PUBLISHED);
         }
 
     }

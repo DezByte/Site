@@ -11,11 +11,15 @@
 
     namespace SiteDezz\Model\Entity;
 
+    use Dez\ORM\Collection\ModelCollection;
     use SiteDezz\Model\Entity\GeneratedEntity\Entity_6694884f727937d6fa8f476277719566;
 
     class ArticleCategories extends Entity_6694884f727937d6fa8f476277719566
     {
 
+        /**
+         * @return array
+         */
         public static function tree()
         {
             $treeArray = [];
@@ -38,6 +42,45 @@
             }
 
             return $treeArray;
+        }
+
+        /**
+         * @param int $id
+         * @param array $ids
+         * @return array
+         */
+        public static function childIDs($id = 0, &$ids = [])
+        {
+            if(count($ids) == 0 && $id > 0) {
+                $ids[] = $id;
+            }
+
+            $childCategories = ArticleCategories::query()->where('parent_id', $id)->find();
+
+            foreach ($childCategories as $category) {
+                $ids[] = (integer) $category->id();
+                ArticleCategories::childIDs($category->id(), $ids);
+            }
+
+            return $ids;
+        }
+
+        /**
+         * @param int $id
+         * @param ModelCollection $collection
+         * @return ModelCollection
+         */
+        public static function parentCategories($id = 0, ModelCollection $collection)
+        {
+            $category = ArticleCategories::one($id);
+
+            $collection->add($category);
+
+            if($category->getParentId() > 0) {
+                static::parentCategories($category->getParentId(), $collection);
+            }
+
+            return $collection;
         }
 
     }

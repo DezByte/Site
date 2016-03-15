@@ -3,6 +3,7 @@
 namespace SiteDezz\Controller;
 
 use Dez\Mvc\Controller;
+use Dez\ORM\Collection\ModelCollection;
 use Dez\Validation\Rules\Required;
 use Dez\Validation\Rules\StringLength;
 use Dez\Validation\Validation;
@@ -19,15 +20,52 @@ class ArticlesController extends Controller
 
     public function indexAction()
     {
-        Articles::popular()->pagination($this->request->getQuery('page', 1), 10)->find();
-        $article = new Articles();
-        $article->tags()->delete();
+        Articles::published()->pagination($this->request->getQuery('page', 1), 10)->find();
     }
 
     public function itemAction($id)
     {
         $article = Articles::one($id);
+
+        if(! $article) {
+            $this->flash->error("Упс, страничка ID: {$id} на найдена");
+            $this->response->redirect($this->url->path('articles'))->sendHeaders();
+        }
+
+        $article->setViews($article->getViews() + 1)->save();
+
         $this->view->set('article', $article);
+    }
+    
+    public function unpublishedAction($id)
+    {
+        $article = Articles::one($id);
+
+        if($article->getStatus() == Articles::STATUS_PUBLISHED) {
+            $this->flash->notice("Страничка уже опубликована");
+            $link = $this->url->path("{$article->id()}-{$article->getSlug()}");
+            $this->response->redirect($link)->sendHeaders();
+        }
+
+        $this->view->set('article', $article);
+    }
+
+    public function popularAction()
+    {
+        $articles = Articles::popular()->pagination($this->request->getQuery('page', 1), 10)->find();
+
+        $this->view->set('articles', $articles);
+        $this->view->set('pagination', $articles->getPagination());
+    }
+
+    public function categoryAction($id, $slug)
+    {
+
+    }
+
+    public function tagAction($id, $slug)
+    {
+
     }
 
     public function composeAction()
@@ -70,8 +108,10 @@ class ArticlesController extends Controller
                 $article->setCreatedAt((new \DateTime())->format('Y-m-d H:i:s'));
 
                 if(! $article->save()) {
-                    $article->createTags($this->request->getPost('tags'));
+
                 } else {
+                    $article->createTags($this->request->getPost('tags'));
+
                     $this->flash->success("Счастье какое! Добавили публикацию!");
                     $link = $this->url->path("{$article->id()}-{$article->getSlug()}");
                     $this->response->redirect($link)->sendHeaders();
