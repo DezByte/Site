@@ -5,20 +5,31 @@
  */
 ?>
 <h2><?= $article->getTitle(); ?></h2>
-<h4>
-    <?php foreach ($parentCategories as $parentCategory): ?>
-        <a href="<?= $url->path("articles/category/{$parentCategory->id()}/{$parentCategory->getSlug()}"); ?>"><?= $parentCategory->getTitle(); ?></a>&nbsp;떇&nbsp;
-    <?php endforeach; ?>
-</h4>
-<div>
+
+<span class="article-category-text">
+<?php $size = $parentCategories->count(); foreach ($parentCategories as $i => $parentCategory): ?>
+<?php
+    $separator = ($size > $i + 1 ? "&nbsp;»&nbsp;" : null);
+?>
+    <a href="<?= $url->path("articles/category/{$parentCategory->id()}/{$parentCategory->getSlug()}"); ?>"><?= $parentCategory->getTitle(); ?></a>
+    <?= $separator; ?>
+<?php endforeach; ?>
+</span>
+
+<div class="article-created-text">
     <i><?= $article->getCreatedAt(); ?></i>
 </div>
+
 <p>
     <?= $article->getContent(); ?>
 </p>
-<?php foreach ($article->xrefs() as $xref): ?>
-    <a href="<?= $url->path("articles/tag/{$xref->tag()->id()}/{$xref->tag()->getTag()}"); ?>"><?= $xref->tag()->getName(); ?></a>&nbsp;&bull;&nbsp;
-<?php endforeach; ?>
-<hr>
-<h2>Комментарии</h2>
-discus here
+
+<div class="article-tags">
+    <?php $size = $article->xrefs()->count(); foreach ($article->xrefs() as $i => $xref): ?>
+        <?php
+        $link = $url->path("articles/tag/{$xref->tag()->id()}/{$xref->tag()->getTag()}");
+        $separator = ($size > $i + 1 ? "&nbsp;&bull;&nbsp;" : null);
+        ?>
+        <a href="<?= $link ?>"><?= $xref->tag()->getName(); ?></a><?= $separator; ?>
+    <?php endforeach; ?>
+</div>

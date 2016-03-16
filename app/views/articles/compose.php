@@ -53,7 +53,7 @@ function nestedOptions($items = [], $level = 0) {
 
         <p>
             <label for="status">Публиковать:</label>
-            <input name="status" id="status" value="<?= $request->getPost('status') ?>" type="checkbox"/>
+            <input name="status" id="status" value="published" type="checkbox"/>
         </p>
 
         <p>

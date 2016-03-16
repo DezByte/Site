@@ -13,22 +13,10 @@ use SiteDezz\Model\Entity\Articles;
 class ArticlesController extends Controller
 {
 
-    public function beforeExecute()
-    {
-
-    }
-
     public function indexAction()
     {
-
-        $article = Articles::one(6);
-
-        foreach ($article->xrefs() as $xref) {
-            var_dump($xref->tag()->getName());
-        }
-        die;
-
-        Articles::published()->pagination($this->request->getQuery('page', 1), 10)->find();
+        $articles = Articles::published()->pagination($this->request->getQuery('page', 1), 10)->find();
+        $this->view->set('articles', $articles);
     }
 
     public function itemAction($id)
@@ -64,7 +52,6 @@ class ArticlesController extends Controller
         $articles = Articles::popular()->pagination($this->request->getQuery('page', 1), 10)->find();
 
         $this->view->set('articles', $articles);
-        $this->view->set('pagination', $articles->getPagination());
     }
 
     public function categoryAction($id, $slug)
@@ -81,6 +68,7 @@ class ArticlesController extends Controller
     {
 
         if($this->request->isPost()) {
+
             // TODO: implement in dez-http
             $_POST['slug'] = \URLify::filter($this->request->getPost('title'));
 
@@ -97,7 +85,7 @@ class ArticlesController extends Controller
             ]));
             $validator->add('tags', new Required())->add(new StringLength([
                 'min' => 2,
-                'max' => 64,
+                'max' => 128,
             ]));
 
             if(! $validator->validate()) {
@@ -114,6 +102,7 @@ class ArticlesController extends Controller
                 $article->setSlug($this->request->getPost('slug'));
                 $article->setCopypasteSource($this->request->getPost('copypaste_source'));
                 $article->setContent($this->request->getPost('content'));
+                $article->setStatus($this->request->getPost('status', Articles::STATUS_UNPUBLISHED));
                 $article->setCreatedAt((new \DateTime())->format('Y-m-d H:i:s'));
 
                 if(! $article->save()) {

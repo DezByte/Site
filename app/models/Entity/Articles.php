@@ -41,26 +41,51 @@
         }
 
         /**
+         * @param int $length
+         * @return string
+         */
+        public function shortContent($length = 128)
+        {
+            $content = $this->getContent();
+
+            $content = explode(" ", $content);
+            $content = array_slice($content, 0, $length);
+
+            return implode(" ", $content);
+        }
+
+        /**
          * @param string $tags
          * @return $this
          */
         public function createTags($tags)
         {
-            foreach ($this->xrefs() as $xref) {
+            $this->xrefs()->each(function($xref){
                 /** @var ArticleTagRef $xref */
                 $xref->tag()->delete();
                 $xref->delete();
-            }
+            });
 
             $tags = array_map(function($tag){
                 return trim($tag);
             }, explode(',', $tags));
 
             foreach ($tags as $tag) {
+
                 $tagModel = (new ArticleTags())
                     ->setName($tag)->setTag(\URLify::filter($tag))
                 ;
                 $tagModel->save(true);
+
+                if($tagModel->id() == 0) {
+                    $tagModel = ArticleTags::query()->where('tag', \URLify::filter($tag))->find()->first();
+                }
+
+                (new ArticleTagRef())
+                    ->setArticleId($this->id())
+                    ->setTagId($tagModel->id())
+                    ->save()
+                ;
             }
 
             return $this;
