@@ -2,8 +2,8 @@
 
 return [
     'web' => [
-        'siteName' => 'DezSite',
-        'siteSlogan' => 'о коде и котиках',
+        'siteName' => 'Site Dezz',
+        'siteSlogan' => 'java, php, котики и мультики...',
     ],
     'application' => [
 
@@ -13,6 +13,7 @@ return [
         'autoload' => [
             'SiteDezz\\Controller' => __DIR__ . '/../controllers',
             'SiteDezz\\Model' => __DIR__ . '/../models',
+            'SiteDezz\\Core' => __DIR__ . '/../common',
         ],
         'controllerNamespace' => 'SiteDezz\\Controller\\',
         'modelDirectory' => __DIR__ . '/../models',
