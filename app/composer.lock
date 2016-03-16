@@ -436,16 +436,16 @@
         },
         {
             "name": "dez-php/dez-mvc-app",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-mvc-app.git",
-                "reference": "3216ec2b729817d9b64c11531889955dafcbfda3"
+                "reference": "2df92e5e4935c617d395df85c98f2c87c6e193b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-mvc-app/zipball/3216ec2b729817d9b64c11531889955dafcbfda3",
-                "reference": "3216ec2b729817d9b64c11531889955dafcbfda3",
+                "url": "https://api.github.com/repos/dez-php/dez-mvc-app/zipball/2df92e5e4935c617d395df85c98f2c87c6e193b2",
+                "reference": "2df92e5e4935c617d395df85c98f2c87c6e193b2",
                 "shasum": ""
             },
             "require": {
@@ -486,7 +486,7 @@
                 "mvc app",
                 "php mvc"
             ],
-            "time": "2016-03-12 19:56:51"
+            "time": "2016-03-16 15:42:10"
         },
         {
             "name": "dez-php/dez-orm",

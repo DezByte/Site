@@ -35,9 +35,9 @@ class ArticlesController extends Controller
     {
         $article = Articles::one($id);
 
-        if(! $article) {
+        if(! $article->exists()) {
             $this->flash->error("Упс, страничка ID: {$id} на найдена");
-            $this->response->redirect($this->url->path('articles'))->sendHeaders();
+            $this->redirect('articles')->send();
         }
 
         $article->setViews($article->getViews() + 1)->save();
@@ -52,8 +52,7 @@ class ArticlesController extends Controller
 
         if($article->getStatus() == Articles::STATUS_PUBLISHED) {
             $this->flash->notice("Страничка уже опубликована");
-            $link = $this->url->path("{$article->id()}-{$article->getSlug()}");
-            $this->response->redirect($link)->sendHeaders();
+            $this->redirect("{$article->id()}-{$article->getSlug()}");
         }
 
         $this->view->set('article', $article);

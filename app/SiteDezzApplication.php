@@ -22,7 +22,7 @@ class SiteDezzApplication extends ApplicationConfigurable
      */
     public function initialize()
     {
-        $this->router->add('/api/:forwardController.:forwardAction', [
+        $this->router->add('/api/:api_controller.:api_action', [
             'controller' => 'json-api',
             'action' => 'index',
         ]);
