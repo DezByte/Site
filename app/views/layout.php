@@ -16,7 +16,7 @@
         <ul>
             <li><a href="<?= $url->path('index') ?>">Главная</a></li>
             <li><a href="<?= $url->path('articles/index') ?>">Странички</a></li>
-            <li><a href="<?= $url->path('index/bin-shares') ?>">Всякие полезности</a></li>
+            <li><a href="<?= $url->path('bin') ?>">Всякие полезности</a></li>
             <li><a href="<?= $url->path('index/instagram') ?>">Фоточки</a></li>
             <li class="end"><a href="<?= $url->path('index/about') ?>">О сайтеце</a></li>
         </ul>

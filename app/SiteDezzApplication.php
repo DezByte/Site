@@ -36,6 +36,16 @@ class SiteDezzApplication extends ApplicationConfigurable
             'controller' => 'articles',
         ])->regex('slug', '\w+');
 
+        $this->router->add('/:latin_slug.:language', [
+            'controller' => 'bin',
+            'action' => 'item',
+        ])->regex('language', '(php|java|cpp|python|ruby|js|html)');
+
+        $this->router->add('/:latin_slug.:language/:format', [
+            'controller' => 'bin',
+            'action' => 'formatted',
+        ])->regex('language', '(php|java|cpp|python|ruby|js|html)');
+
         $this->session->start();
 
         return $this;
