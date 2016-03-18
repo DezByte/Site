@@ -2,7 +2,9 @@
 /**
  * @var \SiteDezz\Model\Entity\Articles $article
  * @var \SiteDezz\Model\Entity\Articles[] $parentCategories
+ * @var $this \Dez\View\Engine
  */
+$this->setSection('title', $article->getTitle());
 ?>
 <h2><?= $article->getTitle(); ?></h2>
 

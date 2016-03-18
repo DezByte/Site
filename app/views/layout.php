@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>DezSite</title>
+    <title><?= ($this->isSection('title') ? $this->section('title') :  $config['web']['siteSlogan']) . ' / ' . $config['web']['siteName'] ?></title>
     <link rel="stylesheet" href="<?= $url->staticPath('css/styles.css'); ?>" type="text/css"/>
 </head>
 <body>

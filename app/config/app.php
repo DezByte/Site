@@ -3,7 +3,7 @@
 return [
     'web' => [
         'siteName' => 'Site Dezz',
-        'siteSlogan' => 'java, php, котики и мультики...',
+        'siteSlogan' => 'Котики, мультики, web и java...',
     ],
     'application' => [
 

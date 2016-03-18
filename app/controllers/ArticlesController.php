@@ -12,7 +12,7 @@ use SiteDezz\Model\Entity\Articles;
 
 class ArticlesController extends Controller
 {
-
+    
     public function indexAction()
     {
         $articles = Articles::published()->pagination($this->request->getQuery('page', 1), 10)->find();
