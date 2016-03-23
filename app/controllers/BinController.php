@@ -76,15 +76,7 @@ class BinController extends Controller {
         }
 
         $this->view->set('slug', BinSources::randomSlug());
-        $this->view->set('select', new SelectElement('language', [
-            'PHP' => 'php',
-            'Java' => 'java',
-            'C++' => 'cpp',
-            'Python' => 'python',
-            'Ruby' => 'ruby',
-            'JavaScript' => 'js',
-            'HTML' => 'html',
-        ]));
+        $this->view->set('select', new SelectElement('language', BinSources::languages()));
 
     }
 

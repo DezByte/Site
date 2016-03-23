@@ -4,4 +4,4 @@
  * @var $this \Dez\View\Engine
 */
 ?>
-<pre><?= htmlentities($bin->getSourceCode()); ?></pre>
+<code><?= htmlentities($bin->getSourceCode()); ?></code>

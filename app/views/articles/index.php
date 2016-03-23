@@ -3,6 +3,9 @@
  * @var \Dez\ORM\Collection\ModelCollection $articles
  * @var \SiteDezz\Model\Entity\Articles $article
  */
+
+if($articles->count() > 0):
+
 ?>
 <?php foreach ($articles as $article): ?>
     <h2 class="article-h2">
@@ -34,3 +37,13 @@
     </div>
 
 <?php endforeach; ?>
+
+<?php
+$pagination = $article->getPagination();
+
+else:
+
+    echo "<i>No records found. Back to <a href=". $url->path('articles') .">main</a> list</i>";
+
+endif;
+?>

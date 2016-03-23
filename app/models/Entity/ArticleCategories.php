@@ -17,6 +17,11 @@
     class ArticleCategories extends Entity_6694884f727937d6fa8f476277719566
     {
 
+        public function articles()
+        {
+            return $this->hasMany(Articles::class, 'category_id', 'id');
+        }
+
         /**
          * @return array
          */

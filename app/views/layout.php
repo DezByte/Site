@@ -17,7 +17,7 @@
             <li><a href="<?= $url->path('index') ?>">Главная</a></li>
             <li><a href="<?= $url->path('articles/index') ?>">Странички</a></li>
             <li><a href="<?= $url->path('bin') ?>">Всякие полезности</a></li>
-            <li><a href="<?= $url->path('index/instagram') ?>">Фоточки</a></li>
+            <li><a href="<?= $url->path('index/foto') ?>">Фоточки</a></li>
             <li class="end"><a href="<?= $url->path('index/about') ?>">О сайтеце</a></li>
         </ul>
     </div>
@@ -37,9 +37,9 @@
                 <li>
                     <h3>Странички</h3>
                     <ul class="blocklist">
-                        <li><a href="<?= $url->path('articles/most-popular') ?>">Популярные</a></li>
-                        <li><a href="<?= $url->path('articles/latest') ?>">Самые новые</a></li>
-                        <li><a href="<?= $url->path('articles/categories') ?>">По категориям</a></li>
+                        <li><a href="<?= $url->path('articles/popular') ?>">Популярные</a></li>
+                        <li><a href="<?= $url->path('articles/index') ?>">Самые новые</a></li>
+                        <li><a href="<?= $url->path('articles/categories-tree') ?>">Категории</a></li>
                     </ul>
                 </li>
 

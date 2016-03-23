@@ -15,5 +15,14 @@
 
     class ArticleTags extends Entity_5c7de2a4809be9f904c0994c730c58df
     {
-        // write your code here
+
+        /**
+         * @return \Dez\ORM\Collection\ModelCollection
+         * @throws \Dez\ORM\Exception
+         */
+        public function refs()
+        {
+            return $this->hasMany(ArticleTagRef::class, 'tag_id');
+        }
+
     }

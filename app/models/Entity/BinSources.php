@@ -38,4 +38,17 @@
             return $latin;
         }
 
+        public static function languages()
+        {
+            return [
+                'PHP' => 'php',
+                'Java' => 'java',
+                'C++' => 'cpp',
+                'Python' => 'python',
+                'Ruby' => 'ruby',
+                'JavaScript' => 'js',
+                'HTML' => 'html',
+            ];
+        }
+
     }
