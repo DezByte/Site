@@ -477,16 +477,16 @@
         },
         {
             "name": "dez-php/dez-mvc-app",
-            "version": "v1.5.0",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-mvc-app.git",
-                "reference": "2df92e5e4935c617d395df85c98f2c87c6e193b2"
+                "reference": "ffc7f159e8f054775629cf06684953403a523edc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-mvc-app/zipball/2df92e5e4935c617d395df85c98f2c87c6e193b2",
-                "reference": "2df92e5e4935c617d395df85c98f2c87c6e193b2",
+                "url": "https://api.github.com/repos/dez-php/dez-mvc-app/zipball/ffc7f159e8f054775629cf06684953403a523edc",
+                "reference": "ffc7f159e8f054775629cf06684953403a523edc",
                 "shasum": ""
             },
             "require": {
@@ -527,7 +527,7 @@
                 "mvc app",
                 "php mvc"
             ],
-            "time": "2016-03-16 15:42:10"
+            "time": "2016-03-23 12:13:16"
         },
         {
             "name": "dez-php/dez-orm",
@@ -661,16 +661,16 @@
         },
         {
             "name": "dez-php/dez-url",
-            "version": "v1.0.2",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dez-php/dez-url.git",
-                "reference": "38bbb4c4d7494429bd744a8c63106e29e3509af9"
+                "reference": "90bbe3875fd98a688e01ad70b4781b3901ebc4e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dez-php/dez-url/zipball/38bbb4c4d7494429bd744a8c63106e29e3509af9",
-                "reference": "38bbb4c4d7494429bd744a8c63106e29e3509af9",
+                "url": "https://api.github.com/repos/dez-php/dez-url/zipball/90bbe3875fd98a688e01ad70b4781b3901ebc4e0",
+                "reference": "90bbe3875fd98a688e01ad70b4781b3901ebc4e0",
                 "shasum": ""
             },
             "require": {
@@ -704,7 +704,7 @@
                 "url",
                 "url builder"
             ],
-            "time": "2015-10-14 11:49:18"
+            "time": "2016-03-23 11:09:20"
         },
         {
             "name": "dez-php/dez-view",

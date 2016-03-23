@@ -3,6 +3,8 @@
 namespace SiteDezz\Controller;
 
 use Dez\Mvc\Controller;
+use Dez\Mvc\GridRouteMapper\AnonymousMapper;
+use Dez\Mvc\GridRouteMapper\Mapper;
 use Dez\ORM\Collection\ModelCollection;
 use Dez\Validation\Rules\Required;
 use Dez\Validation\Rules\StringLength;
@@ -13,14 +15,23 @@ use SiteDezz\Model\Entity\Articles;
 class ArticlesController extends Controller
 {
     
-    public function indexAction()
+    public function indexAction($page = 1)
     {
-        $articles = Articles::published()->pagination($this->request->getQuery('page', 1), 10)->find();
+        $mapper = new AnonymousMapper();
+        $mapper->setAllowedFilter(['id']);
+
+        $query = Articles::query();
+
+        $this->grid($mapper, $query)->processDataSource();
+
+        $articles = $query->pagination($page, 2)->find();
+
         $this->view->set('articles', $articles);
     }
 
     public function itemAction($id)
     {
+        
         $article = Articles::one($id);
 
         if(! $article->exists()) {
@@ -46,10 +57,9 @@ class ArticlesController extends Controller
         $this->view->set('article', $article);
     }
 
-    public function popularAction()
+    public function popularAction($page = 1)
     {
-        $articles = Articles::popular()->pagination($this->request->getQuery('page', 1), 10)->find();
-
+        $articles = Articles::popular()->pagination($page, 10)->find();
         $this->view->set('articles', $articles);
     }
 
@@ -115,7 +125,7 @@ class ArticlesController extends Controller
                 }
             }
         }
-
+        
         $this->view->set('categoriesTree', ArticleCategories::tree());
 
     }

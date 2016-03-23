@@ -2,6 +2,7 @@
 /**
  * @var \Dez\ORM\Collection\ModelCollection $articles
  * @var \SiteDezz\Model\Entity\Articles $article
+ * @var \Dez\View\View $view
  */
 ?>
 <?php foreach ($articles as $article): ?>
@@ -34,3 +35,11 @@
     </div>
 
 <?php endforeach; ?>
+
+<div>
+<?php
+$view->set('pagination', $articles->getPagination());
+$view->set('relativeUrl', $url->path('articles/index/%page%'));
+echo $view->fetch('common/pagination');
+?>
+</div>

@@ -27,14 +27,14 @@ class SiteDezzApplication extends ApplicationConfigurable
             'action' => 'index',
         ]);
 
-        $this->router->add('/:id-:slug', [
-            'controller' => 'articles',
-            'action' => 'item',
-        ])->regex('id', '\d+')->regex('slug', '\w+');
-
         $this->router->add('/articles/:action/:id/:slug', [
             'controller' => 'articles',
         ])->regex('slug', '\w+');
+
+        $this->router->add('/:article_id-:slug', [
+            'controller' => 'articles',
+            'action' => 'item'
+        ])->regex('article_id', '\d+')->regex('slug', '\w+');
 
         $this->router->add('/:latin_slug.:language', [
             'controller' => 'bin',
@@ -56,7 +56,7 @@ class SiteDezzApplication extends ApplicationConfigurable
      */
     public function injection()
     {
-        $this->getDi()->set('auth', function() {
+        $this->getDi()->set('auth', function () {
             return new Auth(new Session($this->getDi()));
         });
 
