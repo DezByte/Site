@@ -31,7 +31,7 @@ class SiteDezzApplication extends ApplicationConfigurable
             'controller' => 'articles',
         ])->regex('slug', '\w+');
 
-        $this->router->add('/:article_id-:slug', [
+        $this->router->add('/:article_id-:slug.html', [
             'controller' => 'articles',
             'action' => 'item'
         ])->regex('article_id', '\d+')->regex('slug', '\w+');

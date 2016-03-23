@@ -1,11 +1,13 @@
 <?php
 /**
- * @var $pagination \Dez\ORM\Common\Pagi
+ * @var $pagination Pagi
  * @var $relativeUrl string
 */
+use Dez\ORM\Common\Pagi;
+
 ?>
 <div class="pagination">
-    <?php for ($i = 0, $count = $pagination->getNumPages(); $i < $count; $i++): ?>
+    <?php if($pagination instanceof Pagi) for ($i = 0, $count = $pagination->getNumPages(); $i < $count; $i++): ?>
         <?php if($pagination->getCurrentPage() == $i + 1): ?>
             <span class="pagination-current-page"><?= $i + 1; ?></span>
         <?php else: ?>

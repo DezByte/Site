@@ -18,15 +18,22 @@ class ArticlesController extends Controller
     public function indexAction($page = 1)
     {
         $mapper = new AnonymousMapper();
-        $mapper->setAllowedFilter(['id']);
+        $mapper->setAllowedFilter(['id', 'title']);
 
         $query = Articles::query();
 
         $this->grid($mapper, $query)->processDataSource();
 
+//        die(
+//            var_dump(
+//                $query->getNativeBuilder()->query()
+//            )
+//        );
+
         $articles = $query->pagination($page, 2)->find();
 
         $this->view->set('articles', $articles);
+        $this->view->set('mapper', $mapper);
     }
 
     public function itemAction($id)
