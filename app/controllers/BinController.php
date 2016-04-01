@@ -19,18 +19,25 @@ class BinController extends Controller {
 
     public function itemAction($slug, $language)
     {
+        /**
+         * @var LatinWords $latinSlug
+         */
         $latinSlug = LatinWords::query()->where('word', $slug)->first();
         $this->view->set('bin', $latinSlug->bin());
+        $this->view->setMainLayout('bin-item');
     }
 
     public function formattedAction($slug, $language, $format)
     {
+        /**
+         * @var LatinWords $latinSlug
+        */
         $latinSlug = LatinWords::query()->where('word', $slug)->first();
 
         if($format == 'raw') {
             $this->response
                 ->setContent($latinSlug->bin()->getSourceCode())
-                ->setHeader('Content-type', "application/$language")
+                ->setHeader('Content-type', "application/text-plain")
                 ->send();
             die;
         }
@@ -40,39 +47,41 @@ class BinController extends Controller {
     public function shareNewAction()
     {
 
-        $validator = new Validation($this->request->getPost());
+        if($this->request->isPost()) {
+            $validator = new Validation($this->request->getPost());
 
-        $validator->add('title', new StringLength([
-            'min' => 2,
-            'max' => 128,
-        ]));
+            $validator->add('title', new StringLength([
+                'min' => 2,
+                'max' => 128,
+            ]));
 
-        $validator->add('source_code', new StringLength([
-            'min' => 2,
-            'max' => PHP_INT_MAX - 1,
-        ]));
+            $validator->add('source_code', new StringLength([
+                'min' => 2,
+                'max' => 1024 * 64,
+            ]));
 
-        $validator->required('language');
+            $validator->required('language');
 
-        if(! $validator->validate()) {
-            foreach($validator->getMessages() as $messages) {
-                foreach($messages as $message) {
-                    /** @var Message $message */
-                    $this->flash->warning($message->getMessage());
+            if(! $validator->validate()) {
+                foreach($validator->getMessages() as $messages) {
+                    foreach($messages as $message) {
+                        /** @var Message $message */
+                        $this->flash->warning($message->getMessage());
+                    }
                 }
+            } else {
+                $bin = new BinSources();
+
+                $bin->setTitle($this->request->getPost('title'));
+                $bin->setSourceCode($this->request->getPost('source_code'));
+                $bin->setLanguage($this->request->getPost('language'));
+                $bin->setSlugKey($this->request->getPost('slug_key'));
+                $bin->setCreatedAt((new \DateTime())->format('Y-m-d H:i:s'));
+
+                $bin->save();
+
+                $this->redirect("{$bin->slug()->getWord()}.{$this->request->getPost('language')}");
             }
-        } else {
-            $bin = new BinSources();
-
-            $bin->setTitle($this->request->getPost('title'));
-            $bin->setSourceCode($this->request->getPost('source_code'));
-            $bin->setLanguage($this->request->getPost('language'));
-            $bin->setSlugKey($this->request->getPost('slug_key'));
-            $bin->setCreatedAt((new \DateTime())->format('Y-m-d H:i:s'));
-
-            $bin->save();
-
-            $this->redirect("{$bin->slug()->getWord()}.{$this->request->getPost('language')}");
         }
 
         $this->view->set('slug', BinSources::randomSlug());

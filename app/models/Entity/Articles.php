@@ -96,7 +96,7 @@
          */
         public static function popular()
         {
-            return static::query()->order('views', 'desc');
+            return static::published()->order('views', 'desc');
         }
 
         /**
