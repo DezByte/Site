@@ -11,6 +11,7 @@ use Dez\Validation\Rules\StringLength;
 use Dez\Validation\Validation;
 use SiteDezz\Model\Entity\ArticleCategories;
 use SiteDezz\Model\Entity\Articles;
+use SiteDezz\Model\Entity\ArticleTags;
 
 class ArticlesController extends Controller
 {
@@ -72,12 +73,36 @@ class ArticlesController extends Controller
 
     public function categoryAction($id, $slug)
     {
+        $categoriesIds = ArticleCategories::query()
+            ->where('id', ArticleCategories::childIDs($id))
+            ->find()->getIDs();
 
+        $articles = Articles::published()
+            ->where('category_id', $categoriesIds)
+            ->pagination($this->request->getQuery('page', 1), 10)
+            ->find();
+
+        $this->view->set('articles', $articles);
     }
 
     public function tagAction($id, $slug)
     {
+        $tag = ArticleTags::one($id);
+        $articleIds = $tag->refs()->getIDs('article_id');
 
+        $articles = Articles::query()
+            ->where('id', $articleIds)
+            ->where('status', Articles::STATUS_PUBLISHED)
+            ->pagination($this->request->getQuery('page', 1), 10)
+            ->find();
+
+        $this->view->set('articles', $articles);
+        $this->view->set('tag', $tag);
+    }
+
+    public function categoriesTreeAction()
+    {
+        $this->view->set('tree', ArticleCategories::tree());
     }
 
     public function composeAction()

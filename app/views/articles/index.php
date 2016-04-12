@@ -5,7 +5,11 @@
  * @var \Dez\View\View $view
  * @var Mapper $mapper
  */
+
 use Dez\Mvc\GridRouteMapper\Mapper;
+
+if($articles->count() > 0):
+
 ?>
 
 <a href="<?= $mapper->filter('id', Mapper::MAPPER_GREATER_THAN, 10)->url('articles/index') ?>">where > 10</a>
@@ -55,6 +59,15 @@ use Dez\Mvc\GridRouteMapper\Mapper;
 
 <?php endforeach; ?>
 
+<?php
+$pagination = $article->getPagination();
+
+else:
+
+    echo "<i>No records found. Back to <a href=". $url->path('articles') .">main</a> list</i>";
+
+endif;
+?>
 <div>
 <?php
 $view->set('pagination', $articles->getPagination());

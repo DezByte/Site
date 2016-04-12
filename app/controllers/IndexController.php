@@ -19,4 +19,14 @@ class IndexController extends Controller
         $this->response->setContent([time()]);
     }
 
+    public function aboutAction()
+    {
+
+    }
+
+    public function fotoAction()
+    {
+
+    }
+
 }
